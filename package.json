@@ -1,0 +1,21 @@
+{
+  "name": "keel",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @keel/core && npm run build -w @keel/ctxc && npm run build -w @keel/i2e && npm run build -w @keel/friction && npm run build -w @keel/tier",
+    "typecheck": "npm run typecheck -w @keel/core && npm run typecheck -w @keel/ctxc && npm run typecheck -w @keel/i2e && npm run typecheck -w @keel/friction && npm run typecheck -w @keel/tier",
+    "test": "npm test -w @keel/core && npm test -w @keel/ctxc && npm test -w @keel/i2e && npm test -w @keel/friction && npm test -w @keel/tier",
+    "catalog": "node scripts/catalog.mjs",
+    "link-all": "npm link -w @keel/ctxc -w @keel/i2e -w @keel/friction -w @keel/tier"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=22.6"
+  }
+}
